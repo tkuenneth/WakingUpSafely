@@ -34,14 +34,6 @@ One screen shows when the alarm last went off, in a short friendly format
 `ListenerDispatcher` is part of the fork, but this app schedules its keep-alive
 with `Delivery.ALWAYS`. The listener path is shown by `Heartbeat`.
 
-## Build and run
-
-- Android Studio with the Android 17 (API 37) SDK installed
-- Android Gradle plugin 9.4.0 (needs Gradle 9.6 or later; the wrapper uses 9.6.1), JDK 17
-- `minSdk` 31, `compileSdk` and `targetSdk` 37
-
-Open the folder in Android Studio, or run `./gradlew installDebug`.
-
 ### Things to know
 
 - **Exact alarms:** on Android 14 and higher, `SCHEDULE_EXACT_ALARM` is denied by
@@ -63,17 +55,3 @@ adb shell dumpsys battery unplug
 adb shell am set-inactive dev.tkuenneth.wakingupsafely true
 adb shell am get-standby-bucket dev.tkuenneth.wakingupsafely
 ```
-
-## How this project was checked
-
-It was built without access to Google's Maven repository, so it has **not** been
-built with Gradle or run on a device yet. Instead:
-
-- All Kotlin sources compile without errors with `kotlinc` against Android API
-  declarations taken from the Android 17 framework source.
-- Behaviour tests with test doubles pass for: scheduling and delivery on both
-  paths, the receiver's wake lock and `goAsync()` handling, the inexact fallback,
-  re-arming after boot and after the permission grant, cancelling by tag across
-  paths, ignoring late listener deliveries, and the heartbeat's start/stop order.
-
-The first Gradle build will tell whether the build configuration needs a tweak.
