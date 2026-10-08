@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Waking Up Safely</string>
+    <string name="last_went_off_label">The alarm last went off</string>
+    <string name="not_yet">Not yet</string>
+    <string name="waiting_for_alarm">Waiting for the first alarm</string>
+    <string name="via_prefix">via %1$s</string>
+    <string name="allow_exact_alarms">Allow exact alarms</string>
+    <string name="today">Today</string>
+</resources>
