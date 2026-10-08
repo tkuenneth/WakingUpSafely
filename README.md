@@ -45,7 +45,7 @@ with `Delivery.ALWAYS`. The listener path is shown by `Heartbeat`.
 - **Battery:** firing every minute is for the demo. Real keep-alives should use
   the longest interval the server allows.
 
-### Testing idle (commands from Google's Doze guide)
+### Testing idle (commands from Google's docs)
 
 ```
 adb shell dumpsys deviceidle force-idle
@@ -53,5 +53,6 @@ adb shell dumpsys deviceidle unforce
 adb shell dumpsys battery reset
 adb shell dumpsys battery unplug
 adb shell am set-inactive dev.tkuenneth.wakingupsafely true
+adb shell am set-inactive dev.tkuenneth.wakingupsafely false
 adb shell am get-standby-bucket dev.tkuenneth.wakingupsafely
 ```
