@@ -25,7 +25,7 @@ One screen shows when the alarm last went off, in a short friendly format
 | Slide | File |
 |---|---|
 | 8 – What the recipe makes us add in `onReceive()` | `AlarmReceiver.kt` |
-| 14, 15 – Our keep-alive on API 37 / When the heartbeat fires | `Heartbeat.kt` |
+| 14, 15 – Our keep-alive on API 37 / Here's `onAlarm()` | `Heartbeat.kt` |
 | 20 – One call site, two mechanisms | `AlarmDispatcher.kt` |
 | 21 – The fork, in one place | `AlarmDispatcher.kt` (`alarmDispatcher()`) |
 | 22 – Routing by policy | `HybridDispatcher.kt`, `ListenerDispatcher.kt` |
@@ -40,7 +40,7 @@ with `Delivery.ALWAYS`. The listener path is shown by `Heartbeat`.
   default for new installs. Until you tap **Allow exact alarms**, the keep-alive
   falls back to `setAndAllowWhileIdle()`, which is inexact.
 - **Boot:** `BOOT_COMPLETED` only reaches the app after it has been launched once.
-- **Idle:** Google documents rationing for allow-while-idle alarms. Expect the
+- **Idle:** Google documents throttling for allow-while-idle alarms. Expect the
   one-minute interval to stretch in Doze and in lower standby buckets.
 - **Battery:** firing every minute is for the demo. Real keep-alives should use
   the longest interval the server allows.

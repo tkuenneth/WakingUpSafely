@@ -12,7 +12,7 @@ interface KeepAliveSocket {
 
 const val INTERVAL_MS = 60_000L
 
-// Slides 14 and 15: "Our keep-alive on API 37" and "When the heartbeat fires"
+// Slide 14: "Our keep-alive on API 37"; onAlarm() is on slide 15
 @RequiresApi(Build.VERSION_CODES.CINNAMON_BUN)
 class Heartbeat(
     private val alarmManager: AlarmManager,
