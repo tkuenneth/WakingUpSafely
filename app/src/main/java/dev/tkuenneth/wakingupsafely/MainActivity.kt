@@ -44,8 +44,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         alarmManager = getSystemService(AlarmManager::class.java)
 
-        // Arm the keep-alive, for example after the first install.
-        KeepAlive.schedule(this)
+        // Arm the keep-alive on fresh launch, for example after the first install.
+        if (savedInstanceState == null) {
+            KeepAlive.schedule(this)
+        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.CINNAMON_BUN) {
             val app = application as WakeApp
