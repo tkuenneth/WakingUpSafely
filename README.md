@@ -29,7 +29,7 @@ One screen shows when the alarm last went off, in a short friendly format
 | 20 – One call site, two mechanisms | `AlarmDispatcher.kt` |
 | 21 – The fork, in one place | `AlarmDispatcher.kt` (`alarmDispatcher()`) |
 | 22 – Routing by policy | `HybridDispatcher.kt`, `ListenerDispatcher.kt` |
-| 23 – The honest part: the legacy side | `BroadcastDispatcher.kt`, `WorkRegistry.kt` |
+| 23 – The broadcast side | `BroadcastDispatcher.kt`, `WorkRegistry.kt` |
 
 `ListenerDispatcher` is part of the fork, but this app schedules its keep-alive
 with `Delivery.ALWAYS`. The listener path is shown by `Heartbeat`.
